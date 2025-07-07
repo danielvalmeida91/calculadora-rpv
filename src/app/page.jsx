@@ -1,6 +1,13 @@
+"use client";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter()
+
+  const handleClick = () => {
+    router.push("/calculadora");
+  };
   return (
     <>
       <div className="h-screen w-full flex items-center justify-center">
@@ -12,9 +19,13 @@ export default function Home() {
           <p className="leading-relaxed text-lg text-center">
             Este projeto foi criado para demonstrar uma calculadora de operações matemáticas integrando frontend moderno com backend externo, utilizando as melhores práticas do ecossistema React/Next.js.
           </p>
-          <Button>Ir para a calculadora</Button>
+          <Button
+            onClick={handleClick}
+          >Ir para a calculadora</Button>   
+
         </div>
       </div>
+
     </>
   );
 }
